@@ -1,0 +1,155 @@
+1. Write a shell script that adds an extension “.new” to all the files in the directory.
+sol:
+step:1nano filename.sh
+{
+for  file in *
+do 
+mv file file1.new
+done
+
+}
+step:2
+chmod 755 filename.sh
+step3:./filename.sh
+
+2. Delete file which has special characters. “ -“, “—“, “*”, “$”.
+sol:
+rm -i filename
+
+3. Write a shell script that take two input numbers from user at runtime and display arithmetic
+operation on that numbers, find out max, & min number from them, find weather that numbers
+negative or positive.
+1.arthamatic operations
+#!/bin/bash
+first_num=0
+second_num=0
+echo -n "Enter the first number --> "
+read first_num
+echo -n "Enter the second number -> "
+read second_num
+echo "first number + second number = $((first_num + second_num))"
+echo "first number - second number = $((first_num - second_num))"
+echo "first number * second number = $((first_num * second_num))"
+echo "first number / second number = $((first_num / second_num))"
+echo "first number % second number = $((first_num % second_num))"
+echo "first number raised to the"
+echo "power of the second number   = $((first_num ** second_num))"
+if [ $first_num -lt 0 ]
+then
+    echo "Negative"
+elif [ $first_num -gt 0 ]
+then
+    echo "Positive"
+else
+    echo "Neither Positive Nor Negative"
+fi
+if [ $second_num -lt 0 ]
+then
+    echo "Negative"
+elif [ $second_num -gt 0 ]
+then
+    echo "Positive"
+else
+    echo "Neither Positive Nor Negative"
+fi
+if [ $first_num -gt $second_num ]
+then
+echo "first number is greater than second number"
+else
+echo "second number is greater than first number"
+fi
+4. Write a shell script that take one input number from user and print 1 to n number using three
+loops (For, while, until). (N = entered number)
+# !/bin/sh
+#for until loop
+echo "enter a number"
+read num
+a=0
+until [ $a -gt $num ]
+do
+  echo number: $a
+  ((a++))
+done
+#for while loop  
+echo "enter  a num"
+read num
+i=1
+while [ $i -le $num ]
+do
+    echo $i
+    i=expr $i + 1
+done
+#for for loop
+echo "enter  a num"
+read num
+for((i=1;i<=num;i++))
+do
+echo $i
+done
+5. Write a shell script to display the last updated file of the newest file in a directory.
+sol: ls -Art | tail -n 1
+it gives the new added file in the directory
+description about command:
+1.using ls -Artls you can also view the file date.  
+2.tail -n it will give last n files
+3.tail -n 1 gives last 1file         
+                                                 
+6. Write a shell script to get the total count of the word “Linux” in all the “.txt” files and also across
+files present in subdirectories.
+sol:
+grep -roh Linux | wc -w --> to get the count
+$grep  -r "linux"
+to display with file names  with count of that word:
+$grep -c -r "Linux"
+7. Write a shell script that copy all the directories, subdirectories and files from one location to
+another specific location.
+sol:
+cp -r linux/ linux1
+
+8. Display specific number of lines as follow:
+1. Display first and last 10 lines of file contains
+2. Display line no. 3 to 8 from file contains.
+3. Display 7 lines and start from second last line in reverse manner.
+sol:
+1.tail.filename
+2.sed -n 3,8p filename
+or
+head -8 loop.sh | tail -6
+3.head -n -2 foo.txt|tac
+
+9. Perform following task:
+1. Add two new users and two groups
+2. Login as one user and then create new file
+3. Send created file from one user to another user
+4. Login as second user and copy that file from user2 to user1(in same system)
+sol:
+to go to super user:su - rapidadmin
+to add new user: sudo add username
+to add group: sudo addgroup groupname
+to list all the users:awk -F: '{ print $1}' /etc/passwd
+to list all the groups:
+3.go to the root sudo su from rapidadmin
+ then need to check the users are there or not
+cp/ tab- ->list out all the users(if not present then check the home directory)
+cd.. to go to home and type ll commmand display all the users
+copy file form one user to another user
+cp user1/user.txt user2/user.txt
+4.sol-  - >su  -  rapidadmin(go to the superuser)
+add new user  sudo adduser username
+enter the password  for newadded username and  reenter to conform
+user deatils to fill
+create a file
+add the data to file
+then go to the root user sudo su
+ then need to check the users are there or not
+cp/ tab- ->list out all the users(if not present then check the home directory)
+cd.. to go to home and type ll commmand display all the users
+copy file form one user to another user
+cp user1/user.txt user2/user.txt
+10. Ex. 10 Task to find all files from folder where file contains string 'abc'.
+sol:
+$  grep "abc" ~/*.txt )(search all the text files)
+$ grep -r "abc":gives the result by recursive check
+
+
+
