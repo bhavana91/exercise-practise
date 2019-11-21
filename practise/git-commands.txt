@@ -1,0 +1,250 @@
+ when master brqnch or any brnch is not pushed into repository need to del the repositoryor undo the commits that are done in another files.
+$ cat .ssh/id_rsa.pub - - > to see the ssh key that was generated
+$ git remote rm origin- -> to delete the origin
+$ git remote add origin https://github.com/bhavana91/bhavana.git - -> to add the origin
+You can configure multiple remote repositories with the git remote command:
+           git remote add url
+
+To fetch from all the configured remotes and update tracking branches, but not merge into HEAD, do:
+          git remote update
+$ git push origin master - - > to push all the files from locl to repository
+$ git pull origin master - -> to pull all the files from repository to orgin
+$ git clone ssh path - - >to clone the project from  repositroy to local system
+ $ git rm --catched filename
+
+ $ git inti - - > git initialization repository (.git folder will create)
+$ git add <file> - -> to add new file
+$ git status - - > to check the git status(staging area what r running)
+$ git commit -m 'message' - ->to make any changes  in a file we use commit
+$ git push - - > to push the latest from repository
+$ git  clone - - > to copy the hole repository to current system
+
+
+installing git - - > $ sudo apt-get install git
+ version of git - - > $ git -- version
+ to add email and username to git - ->
+to add username:
+$ git config - -  global  user.name 'bhavanapolireddy'
+to add email
+$ git config - - global user.email 'bhavana@emial.com'
+$ git *.html - -> it will add all the HTML files into the staging area
+$ git add . - -> to add all the files into staging area
+$ git add -A - -> to add all the files once to repository.
+$ git commit -a  -m 'message'- - > to commit all the files at once.
+$ git log - - > to see all the committed comites in files  it will display the time also
+$ git commit - -> it will open up a window editor then click on i for insert to get out of that window .wq write
+to skip git commit (mean skippping  hole editing statge) - -> $ git commit -m "write something"$
+ignore some files not to add to repository or not to add to git - ->$  touch .gitingonre(crete anempty file)
+$ git stash - - >Use git stash when you want to record the current state of the working directory and the index, but want to go back to a clean working directory. The command saves your local modifications away and reverts the working directory to match the HEAD commit.
+git pull=git fetch+ git merge
+git pull - -> it will pull all the new files from centeralised repository  to master branch directly .
+git fetch - - > it will be same as pull like fetching all the new changes from the centralized repositary directly addes to new branch which is not connected to current work flow.
+note: while doing fetch we need to do the merge to see the change.
+$ get rebash - - >
+a type of merging
+ all the commits in linear manner.
+$ ssh keygen - - > going to generate one ssh key for pulling all the data to centeral repository
+to see ssh key < $  cat  paste the key that came by using the above command
+$ git branch  -d branch name - - > after  merging  with any another branch it will delete other wise it will ask as like it is not merged do u want to delete.
+for deleting the branch that is just created but nt merged with any another branch is $ git branch  -D branch name.
+git diff - - > will show the new changes  that are made
+git merge --abort - - >On the command line, a simple "git merge --abort" will do this for you. In case you've made a mistake while resolving a conflict and realize this only after completing the merge, you can still easily undo it: just roll back to the commit before the merge happened with "git reset --hard " and start over again.
+git stash list - - > shows all the list of stash
+git stash list -p - - > display all the stash changed recurivy
+
+introduction:
+git means distributed version control system
+repository is a place where u can store all Ur codes
+trunk based devlopment:
+if we r  working on current version like 4.7 and after that it was devolped to 5.0 then some user will say like it is bad or somehting then we need again 4.7 version so we dont have all the4.7 version so wat we need ot to !!!!!?
+we need to create a branch  name it as  masterbranch and  there we r working on version  4.7 and  and when u need to do on 5th verssion then create another branch and do it work on version 5 then if we want to combine the version 4.7 and 5 then merge both branches naemd masterbranch and  newbrach.
+
+
+
+CASE1 : created a project with only name (without readme.md or .gitgnore files) ...without any files then
+option1:  git init git remote add origin url     (url under clone or downlod dropdown) git pull origin master username password
+option2 : git clone url     (url under clone or downlod dropdown).....direct step to pull 
+CASE2: created a project with  name (with readme.md or .gitgnore files) ...with any files then
+option1:  git init git remote add origin url     (url under clone or downlod dropdown) git pull origin master username password
+option2 : git clone url     (url under clone or downlod dropdown).....direct step to pull 
+Branches
+Create a new branch and switch to it:
+git checkout -b <branchname>
+Switch from one branch to another:
+git checkout <branchname>
+List all the branches in your repo, and also tell you what branch you're currently in:
+git branch
+Delete the feature branch:
+git branch -d <branchname>
+Push the branch to your remote repository, so others can use it:
+git push origin <branchname>
+Push all branches to your remote repository:
+git push --all origin
+Delete a branch on your remote repository:
+git push origin :<branchname>
+                              
+git pull will download latest changes from the remote repository and automatically merge those changes in the local repository.
+git pull will merge only into the current working branch. Other branches will stay unaffected.
+If you only want to download the latest changes and review them before merging or want to merge at a later time, git fetch
+In short: Both are similar with one key difference: git fetch only downloads latest changes where as git pull also merges them.
+workflow:
+             your local repository consists of three "trees" maintained by git.             the first one is your Working Directory which holds the actual files.             the second one is the Index which acts as a staging area and             finally the HEAD which points to the last commit you've made.         
+
+git stash pop throws away the (topmost, by default) stash after applying it, whereas git stash apply leaves it in the stash list for possible later reuse (or you can then git stash drop it).
+git stash:
+$ git stash apply - - > we can use it in any branch.
+$ git stash save - - >The above command stashes with a message.
+$ git stash save -u - - >git stash save --include-untracked - - >we can also save the untracked files by using this flag -u.
+$ git stash  pop - - > deletes the stash after applied same as git apply one diff is pop will delete.
+$ git show -p - - >If you want to see  all the stash in all files
+git blame The high-level function of git blame is the display of author metadata attached to specific committed lines in a file. This is used to explore the history of specific code and answer questions about what, how, and why the code was added to a repository.
+$ git checkout filename - - > discard changes to a filename we can see by using this$ .
+$ git reset  head * - -> to unstage the files from staging area.
+$ girt reset HEAD~ number of - - >no of last commits that u want to delete
+use git reset when the changes or commits are not pushed to repository .we can only delete the commits that are in local system. we cannot delete a particular commit we can only delete the number of commits
+--mixed reset:   
+Resets the index but not the working  tree (i.e., the changed files are      preserved but not marked for commit)  and reports what has not been updated. This is the default action.  If -N is specified, removed paths are marked as intent-to-add (see    git-add(1)).
+ --hard reset : Resets the index and working tree.Any changes to tracked files in the  working tree since <commit> are  discarded.        
+removes all the commits.  it discards alll the changes from working tree and index both.
+--soft reset:
+ Does not touch the index file or the working tree at all (but resets the  head to <commit>, just like all  modes do). This leaves all your changed files "Changes to be  emcommitted", as git status would put  it.      
+it keeps all the changes in the staging area      
+          
+               
+             
+             
+               
+             
+             
+         
+
+             
+
+       
+Git stash branch <name>
+This command creates a new branch with the latest stash, and then deletes the latest stash ( like stash pop).
+If you need a particular stash you can specify the stash id. - - > $git stash branch <name> stash@{1}
+the full diff, you can use  $ git stash show -p.
+$ Git stash branch <name> - - > to checkout to that branch
+ur choice
+how to delete a file in the remote from system in git hub:
+And to push changes to remote repo
+git push origin branch_name  
+
+                              
+From the man file:
+When --cached is given, the staged content has to  match either the tip of the branch or the file on disk, allowing the  file to be removed from just the index.
+So, for a single file:
+git rm --cached mylogfile.log
+
+and for a single directory:
+git rm --cached -r mydirectory
+
+You can configure multiple remote repositories with the git remote command:
+git remote add origin
+
+To fetch from all the configured remotes and update tracking branches, but not merge into HEAD, do:
+git remote update
+
+head:
+HEAD is a reference to the last commit in the currently check-out branch. You can think of the HEAD as the "current branch". When you switch branches with git checkout, the HEAD revision changes to point to the tip of the new branch.
+
+tag:
+Tags are ref's that point to specific points in Git history. Tagging is generally used to capture a point in history that is used for a marked version release (i.e. v1.0.1). A tag is like a branch that doesn't change. Unlike branches, tags, after being created, have no further history of commits.
+
+reset:
+1.To review, git reset is a powerful command that is used to undo local changes to the state of a Git repo. Git reset operates on "The Three Trees of Git".
+2. These trees are the Commit History ( HEAD ), the Staging Index, and the  Working Directory. There are three command line options that correspond  to the three trees.
+
+Merging
+Once the preparations are completed, you can start the merge with git merge hotfix command.
+Fast Forward Merge
+A fast-forward merge can occur when there is a linear path between branches that you want to merge. If a master has not diverged,  instead of creating a new commit, it will just point master to the  latest commit of the hotfix branch. All commits from hotfix branch are  now available in master.
+
+However, a fast-forward merge is not possible if the branches have diverged. In this case, you want to use a Three-way merge.
+Three-Way Merge
+When there is not a linear path to the target branch, Git has no choice but to combine them via a three-way merge. This merge uses an extra commit to tie together the two branches.
+
+Test this out! Create your own project with an RSpec test branch and at the same time edit the Controller tests in master. Now, try to merge.
+Git can handle most merges on its own with automatic merging features. A conflict arises when two separate branches have made edits to the same line in a file, or when a file has been deleted in one branch but edited in the other. Conflicts will most likely happen when working in a team environment
+
+
+git log --oneline --graph --decorate --all:
+The --decorate flag makes git log display all of the references (e.g., branches, tags, etc) that point to each commit. This lets you know that the top commit is also checked out (denoted by HEAD ) and that it is also the tip of the master branch.
+
+branch rename:
+                              
+If you want to rename a branch while pointed to any branch, do:
+git branch -m <oldname> <newname>
+
+If you want to rename the current branch, you can do:
+git branch -m <newname>
+
+
+ The easiest way is just to use the git branch commands’ various options. -a shows all local and remote branches, while -r shows only remote branches.
+$ git branch
+* master
+
+$ git branch -a
+* master
+  origin/1-2-stable
+  origin/2-0-stable
+  origin/2-1-stable
+  origin/2-2-stable
+  origin/3-0-unstable
+  origin/HEAD
+  origin/master
+
+$ git branch -r
+  origin/1-2-stable
+  origin/2-0-stable
+  origin/2-1-stable
+  origin/2-2-stable
+  origin/3-0-unstable
+  origin/HEAD
+  origin/master
+
+git remote show origin *  remote origin - - > to see all the deatailes of origin  like how many branches and   tracing.
+$ git ls-remote --heads origin  - - >:
+The ls-remote command returns the SHA1 hash of the latest commit for that reference, so it is quite easy to parse out and get to the exact commit you need if you’re doing some scripting. The --heads option lists only branch names since the command can list tags too.
+
+git rm
+Remove files or directories from the working index (staging area). With git rm,  there are two options to keep in mind: force and cached. Running the  command with force deletes the file. The cached command removes the file  from the working index. When removing an entire directory, a recursive  command is necessary.
+# To remove a file from the working index (cached):
+$ git rm --cached <file name>
+
+# To delete a file (force):
+$ git rm -f <file name>
+
+# To remove an entire directory from the working index (cached):
+$ git rm -r --cached <directory name>
+
+# To delete an entire directory (force):
+$ git rm -r -f <file name>
+
+version basic:
+releasing 1.1.0 - - > 1 indicates for major changes in the current version
+1- - > indicates for minor change
+0  - - > for bug fixing 
+for branching:
+$ git push origin --delete branch name - - > to delete the future branch
+git tags:
+git tag -a v1.4 - - > which is gng to take the description about the tag that was gng to write.after running this cmnd it will open up a window for the file to write.
+git tag -a v1.4 -m "my version 1.4" - - > directly we can write the message with out opening the file editor.
+git tag -v1.6-lW - - > gng to create light weight tags
+git tag - - > list out all the tags
+git log --pretty=oneline - - > to list all the older commits before that are done
+git push origin tagname - - > it is going to push all the tags to repository
+git pull origin tagname - - > it is gng to pull all the tags from repo to local system.
+git checkout tagname  - - > it s gng to make the state of repo to detached head any changes that we r making in tag will not update .They will create a new detached commit. This new detached commit will not be part of any branch and will only be reachable directly by the commits SHA hash.
+git tag -d tagname - - > it will delete the tag.
+git tag tagname - - > creates the tag
+In the event that you must update an existing tag, the -f FORCE option must be used.
+git tag -a -f v1.4 15027957951b64cf874c3557a0f3547bd83b3ff6
+git log history:
+git log -p -2 - - > it will show the last two commits that author  done
+git log -stat - - >to see the detailed abbreviation of commits.if you want to see some abbreviated stats for each commit, you can use the --stat option:
+$ git log --since=2.weeks - - > it will display the commits from last 2weeks
+$ $ git log -S"hi" - - > display the count of files where added.
+
+
