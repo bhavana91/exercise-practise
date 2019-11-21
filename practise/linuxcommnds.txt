@@ -1,0 +1,610 @@
+
+Today notes:
+Start a to-do list
+standerd output -which is going to use for display the standerd output  which is going to return as ::: ls > file1.txt  sfter that we need to display the output for that the command is :;: more file1.txt.
+stranded input is also the same but the symbol goes on differtly::: ls << file1.txt after that need to display the result as  more file1.txt.
+pipelines is used for commands combining one or more commands we need to write once then we need to use the pipelines the command is like-> ls  -t | head.
+filters: filters are also the same thing the used for pipe lining only to combine the commands.
+filters:One kind of program frequently used in pipelines is called filters. Filters take standard input and perform an operation upon it and send the results to standard output. In this way, they can be combined to process information in powerful ways. Here are some of the common programs that can act as filters.
+uinq
+Given a sorted stream of data from 		standard input, it removes duplicate lines of 		data (i.e., it makes sure that every line is 		unique).
+
+
+
+grep
+Examines each line of data it receives 		from standard input and outputs every line 		that contains a specified pattern of 		characters.
+
+
+
+fmt
+Reads text from standard input, then 		outputs formatted text on standard 		output.
+
+
+
+pr
+Takes text input from standard input and 		splits the data into pages with page breaks, 		headers and footers in preparation for 		printing.
+
+
+
+head
+Outputs the first few lines of its input. 		Useful for getting the header of a file.
+
+
+
+pr
+
+
+
+head
+
+tail
+
+
+
+tr
+
+
+
+
+
+
+sed
+
+awk
+
+
+Takes text input from standard input and 		splits the data into pages with page breaks, 		headers and footers in preparation for 		printing.
+
+Outputs the first few lines of its input. 		Useful for getting the header of a file.
+Outputs the last few lines of its input. 		Useful for things like getting the most 		recent entries from a log file.
+
+Translates characters. Can be used to 		perform tasks such as upper/lowercase 		conversions or changing line termination 		characters from one type to another (for 		example, converting DOS text files into Unix 		style text files).
+
+Stream editor. Can perform more 		sophisticated text translations than tr.
+
+An entire programming language designed 		for constructing filters. Extremely 		powerful.
+
+
+
+Performing tasks with pipelines
+Printing from the command line. Linux provides a program called lpr that accepts standard input and sends it to the printer. It is often used with pipes and filters. Here are a couple of examples:
+
+cat poorly_formatted_report.txt | fmt | pr | lpr
+
+cat unsorted_list_with_dupes.txt | sort | uniq | pr | lpr
+
+
+In the first example, we use cat to read the file and output it to standard output, which is piped into the standard input of fmt. 		fmt formats the text into neat paragraphs and outputs it to standard output, which is piped into the standard input of pr. pr splits the text neatly into pages and outputs it to standard output, which is piped into the standard input of lpr. lpr takes its standard input 		and sends it to the printer.
+The second example starts with an unsorted 		list of data with duplicate entries. First, cat sends the list into sort which sorts it and feeds it into uniq which removes any duplicates. Next pr and lpr 		are used to paginate and print the list. 		 		
+Viewing the contents of tar files Often you will see software distributed as a gzipped tar file. This is a traditional Unix style tape archive file (created with tar) that has been compressed with gzip. You can recognize these files by their traditional file extensions, ".tar.gz" or ".tgz". You can use the following command to view the directory of such a file on a Linux system:
+echo commmand:With expansion, you type something and it is expanded into something else before the shell acts upon it. To demonstrate what we mean by this, let's take a look at the echo command. echo is a shell builtin that performs a very simple task. It prints out its text arguments on standard output:
+echo anycharcter*:represents it will display the starting files that are having this ext
+echo *anycharcter:represents it will display the ending files that are having this ext
+Tilde Expansion:As you may recall from our introduction to the cd command, the tilde character (“~”) has a special meaning. When used at the beginning of a word, it expands into the name of the home directory of the named user, or if no user is named, the home directory of the current user:
+7.This lesson will cover the following commands:
+chmod - modify file access rights
+su - temporarily become the superuser
+sudo - temporarily become the superuser
+chown - change file ownership
+chgrp - change a file's group ownership
+rwx rwx rwx = 111 111 111
+rw- rw- rw- = 110 110 110
+rwx --- --- = 111 000 000
+
+and so on...
+
+rwx = 111 in binary = 7
+rw- = 110 in binary = 6
+r-x = 101 in binary = 5
+r-- = 100 in binary = 4
+
+
+Value
+Meaning
+777
+(rwxrwxrwx) No restrictions on 		permissions. Anybody may do anything. 		Generally not a desirable setting.
+755
+(rwxr-xr-x) The file's owner may 		read, write, and execute the file. All others 		may read and execute the file. This setting 		is common for programs that are used by all 		users.
+700
+(rwx------) The file's owner may 		read, write, and execute the file. Nobody 		else has any rights. This setting is useful 		for programs that only the owner may use and 		must be kept private from others.
+666
+(rw-rw-rw-) All users may read 		and write the file.
+644
+(rw-r--r--) The owner may read 		and write a file, while all others may only 		read the file. A common setting for data 		files that everybody may read, but only the 		owner may change.
+600
+(rw-------) The owner may read 		and write a file. All others have no rights. 		A common setting for data files that the 		owner wants to keep private.
+
+(rw-------) The owner may read 		and write a file. All others have no rights. 		A common setting for data files that the 		owner wants to keep private.
+Directory Permissions
+The chmod command can also be used to control the access permissions for directories. Again, we can use the octal notation to set permissions, but the meaning of the r, w, and x attributes is different:
+r - Allows the contents of the directory to be listed if the x attribute is also set.
+w - Allows files within the directory to be created, deleted, or renamed if the x attribute is also set.
+x - Allows a directory to be entered (i.e. cd dir).
+Here are some useful settings for directories:  
+Job Control:There are several commands that can be used to control processes. They are:
+ps - list the processes running on the system
+kill - send a signal to one or more processes (usually to "kill" a process)
+jobs - an alternate way of listing your own processes
+bg - put a process in the background
+fg - put a process in the forground
+kill->
+Name
+Description
+SIGHUP
+Hang up signal. Programs can listen for 		this signal and act upon it. This signal is sent 		to processes running in a terminal when you close 		the terminal.
+SIGINT
+Interrupt signal. This signal is given 		to processes to interrupt them. 		Programs can process this signal and act upon 		it. You can also issue this signal directly 		by typing Ctrl-c in the terminal window 		where the program is running.
+SIGTERM
+Termination signal. This signal is given 		to processes to terminate them. Again, 		programs can process this signal and act upon 		it. This is the default signal sent by the kill command if no signal is 		specified.
+SIGKILL
+Kill signal. This signal causes the 		immediate termination of the process by the 		Linux kernel. Programs cannot listen for this 		signal.
+8.shell scripts:
+a shell script is a file containing a series of commands. The shell reads this file and carries out the commands as though they have been entered directly on the command line.
+To successfully write a shell script, you have to do three things:
+Write a script
+Give the shell permission to execute it
+Put it somewhere the shell can find it
+scripts---> cat<<- eof refers to the ending and starting should be the same string as user defined. 
+show_uptime--> it will display the updatedtime by user commnd is uptime
+df--->drive space means it will display the space occupied by mounted files.
+home_space-->it will twll about how much space is present in his/her home directory.
+echo$ means if it will return 0 it means success and if it return another number from 1-255 ratherthan 0 return failed.
+tes--->
+Expression
+Description
+-d file
+True if file is a directory.
+-e file
+True if file exists.
+-f file
+True if file exists and is a 		regular file.
+-L file
+True if file is a symbolic 		link.
+-r file
+True if file is a file readable by 		you.
+-w file
+True if file is a file writable by 		you.
+-x file
+True if file is a file executable 		by you.
+file1 -nt file2
+True if file1 is newer than (according to modification time) file2
+file1 -ot file2
+True if file1 is older than file2
+-z string
+True if string is empty.
+-n string
+True if string is not empty.
+string1 = string2
+True if string1 equals string2.
+string1 != string2
+True if string1 does not equal string2.
+
+The id command can tell us who the current user is. When executed with the "-u" option, it prints the numeric user id of the current user.
+set -x mean  tracing of script is on and set +x mean tracing is off 
+As you can see, we displayed a prompt on line 3. Note that "-n" given to the echo command causes it to keep the cursor on the same line; i.e., it does not output a linefeed at the end of the prompt.
+#!/bin/bash
+
+echo -n "Enter some text > "
+read text
+echo "You entered: $text"
+       
+*if we want to enter the number manually we need to write n in the prompt
+
+This Week
+
+Someday
+
+
+
+Su vs. Sudo
+ 1.You'll have to enter the root account's password. ... This is a key difference between su and sudo. Su switches you to the root user account and requires the root account's password. Sudo runs a single command with root privileges – it doesn't switch to the root user or require a separate root user password.
+2.The primary difference between the two is the password they require: while 'sudo' requires current user's password, 'su' requires you to enter the root user password. Quite clearly, 'sudo' is a better alternative between the two as far as security is concerned.
+su ~ vs su
+What is the difference between Su and Su?
+su - logs you in completely as root, whereas su makes it so you are pretending to be root. The most obvious example of this is that ~ is root's home directory if you use su - , but your own home directory if you use su . Depending on your system, it may also mean differences in prompt, PATH , or history file.Feb 7, 2011
+
+creating users in linux:
+Local user information is stored in the /etc/passwd file. Each line in this file represents login information for one user. To open the file you can either use cat or less:
+
+
+less /etc/passwd
+
+if ur not having any rights as super user ur going to get an error like
+bhavana.polireddy is not in the sudoers file.  This incident will be reported.
+so for that we need to go to the superuser and there we need add the new user command is
+to go to the superuser--> sudo - rapidadmin(superusername).
+to add the new user--> sudo useradd username.
+commands to get only the list of usernames that are  addded
+awk -F: '{ print $1}' /etc/passwd
+
+
+cut -d: -f1 /etc/passwd
+
+To get a list of all Linux users type the following command:
+getent passwd
+
+You can also use awk or cut to print only the first field containing the username:
+getent passwd | awk -F: '{ print $1}'
+
+Copy
+getent passwd | cut -d: -f1
+
+crating perticular id username
+Use the -u (--uid) option to create a user with a specific UID. For example to create a new user named username with UID of 1500 you would type:
+sudo useradd -u 1500 username
+
+You can verify the user’s UID, using the id command:
+id -u username
+
+id
+1500
+
+we can aslo check the user exists or not by 
+getent passwd | grep jack
+grep command
+we can aslo check the user exists or not by  using 
+getent passwd jack
+
+foreground process- - >When a process runs in the foreground, it occupies your shell, and you can interact with it using the input devices.we can also directly kill the process and stop the process
+Typically when you run a command in the terminal, you have to wait until the command finishes before you can enter another one. This is called running the command in the foreground or foreground process. When a process runs in the foreground, it occupies your shell, and you can interact with it using the input devices.
+to move foreground process to background process
+To move a running foreground process in the background:
+Stop the process by typing Ctrl+Z.
+Move the stopped process to the background by typing bg.To run a command in the background, add the ampersand symbol (&) at the end of the command:
+
+
+command &
+Copy
+The shell job ID (surrounded with brackets) and process ID will be printed on the terminal:
+[1] 25177
+Copy
+You can have multiple processes running in the background at the same time.
+grep command:
+1.to search for given string inside the file
+cmnd- - >grep "string" filename
+finding the empty file in home directory:
+# find ~ -empty
+
+Find files using file-name ( case in-sensitive find)
+-- to find the files ,directories in a system.
+It supports searching by file, folder, name, creation date, modification date, owner and permissions
+# find -iname "filename": to get the file name is there r nt
+
+to find client SSH version :
+-- to get the SSH installed version in the system
+$ ssh -V
+OpenSSH_3.9p1, OpenSSL 0.9.7a Feb 19 2003
+shutdown command examples
+Shutdown the system and turn the power off immediately.
+# shutdown -h now
+
+Shutdown the system after 10 minutes.
+# shutdown -h +10
+
+Reboot the system using shutdown command.
+# shutdown -r now
+
+Force the filesystem check during reboot.
+# shutdown -Fr now
+
+service  command examples
+service --status all - ->status of all services
+service ssh restart - - > to resrt the services
+ps command examples
+ps command is used to display information about the processes that are running in the system.
+While there are lot of arguments that could be passed to a ps command, following are some of the common ones.
+ps -ef |more -  -to get the current running process
+ps -efh |more -  -to get the current running process in a tree structure
+sort command examples
+Sort a file in ascending order
+$ sort names.txt
+
+Sort a file in descending order
+$ sort -r names.txt
+
+free command:
+$free - - >This command is used to display the free, used, swap memory available in the system.
+$free-g - - > to get the how much gb is used and how much is free.If you want to quickly check how many GB of RAM your system has use  the -g option. -b option displays in bytes, -k in kilo bytes, -m in mega  bytes.
+$free-t - - >If you want to see a total memory ( including the swap), use the -t switch, which will display a total line as shown below.
+
+top process command:
+$top -u username - - >To view only the processes owned by a specific user.
+
+. df command examples
+$df -k - - >Displays the file system disk space usage. By default df -k displays output in bytes.
+
+cat command examples
+$cat file1 file2 - - >You can view multiple files at the same time. Following example prints the content of file1 followed by file2 to stdout..  pwd:current path
+tail:last 10 lines of ouput
+more:display output
+less:display the text files
+ls:list of directories
+cd:change the directory
+cd/:The cd / command takes you back to the root directory of the current drive.
+cd..:command, this moves the directory back one directory, also known as the parent directory.
+file:classsify the file contents
+cp - copy files and directories
+mv - move or rename files and directories
+rm - remove files and directories
+mkdir - create directories
+wildcards:to check the matching charcters
+$user:current username
+$PATH:current path
+tar command:The tar command stands for tape achieve, which is the most commonly used tape drive backup command used by the Linux/Unix system. It allows for you to quickly access a collection of files and placed them into a highly compressed archive file commonly called tarball, or tar, gzip, and bzip in Linux.
+cp:
+Command
+Results
+cp file1 file2
+Copies the contents of file1 into file2. If file2 does not exist, it is created; otherwise, file2 is silently overwritten with the contents of file1.
+cp -i file1 file2
+Like above however, since the "-i" 		(interactive) option is specified, if 		file2 exists, the user is prompted before it is overwritten with the contents of file1.
+cp file1 dir1
+Copy the contents of file1 (into a file named file1) inside of directory dir1.
+cp -R dir1 dir2
+Copy the contents of the directory 		dir1. If directory dir2 does not exist, it is created. Otherwise, it creates a directory named dir1 within directory dir2.
+mv
+
+Command
+Results
+mv file1 file2
+If file2 does not exist, then file1 is renamed file2. If 		file2 exists, its contents are silently replaced with the contents of file1.
+mv -i file1 file2
+Like above however, since the "-i" 		(interactive) option is specified, if 		file2 exists, the user is prompted before it is overwritten with the contents of file1.
+mv file1 file2 file3 dir1
+The files file1, file2, file3 are moved to directory dir1. If dir1 does not exist, mv will 		exit with an error.
+mv dir1 dir2
+If dir2 does not exist, then dir1 is renamed dir2. If dir2 exists, the directory dir1 is moved within directory dir2.
+rm:
+Command
+Results
+rm file1 file2
+Delete file1 and file2.
+rm -i file1 file2
+Like above however, since the "-i" 		(interactive) option is specified, the user 		is prompted before each file is deleted.
+rm -r dir1 dir2
+Directories dir1 and dir2 		are deleted along with all of their 		contents.
+
+Working with Commands
+Up until now you have seen a number of commands and their mysterious options and arguments. In this lesson, we will try to remove some of that mystery. This lesson will introduce the following commands.
+type - Display information about command type
+which - Locate a command
+help - Display reference page for shell builtin
+man - Display an on-line command reference
+ls > file:standerd ouput
+ls >> filename:append something to standerd output
+sort < filename: standerd input
+sort <file1 >file2:redirection
+pipelines and fillters:
+pipelines is used for commands combining one or more commands we need to write once then we need to use the pipelines the command is like-> ls  -t | head.
+filters: filters are also the same thing the used for pipe lining only to combine the commands.
+filters:One kind of program frequently used in pipelines is called filters. Filters take standard input and perform an operation upon it and send the results to standard output. In this way, they can be combined to process information in powerful ways. Here are some of the common programs that can act as filters.
+uinq
+Given a sorted stream of data from 		standard input, it removes duplicate lines of 		data (i.e., it makes sure that every line is 		unique).
+
+
+grep
+Examines each line of data it receives 		from standard input and outputs every line 		that contains a specified pattern of 		characters.
+
+
+fmt
+Reads text from standard input, then 		outputs formatted text on standard 		output.
+
+
+pr
+Takes text input from standard input and 		splits the data into pages with page breaks, 		headers and footers in preparation for 		printing.
+
+
+head
+Outputs the first few lines of its input. 		Useful for getting the header of a file.
+
+
+pr
+
+
+
+head
+
+tail
+
+
+
+tr
+
+
+
+
+
+
+sed
+
+awk
+
+
+Takes text input from standard input and 		splits the data into pages with page breaks, 		headers and footers in preparation for 		printing.
+
+Outputs the first few lines of its input. 		Useful for getting the header of a file.
+Outputs the last few lines of its input. 		Useful for things like getting the most 		recent entries from a log file.
+
+Translates characters. Can be used to 		perform tasks such as upper/lowercase 		conversions or changing line termination 		characters from one type to another (for 		example, converting DOS text files into Unix 		style text files).
+
+Stream editor. Can perform more 		sophisticated text translations than tr.
+
+An entire programming language designed 		for constructing filters. Extremely 		powerful.
+
+
+Performing tasks with pipelines
+Printing from the command line. Linux provides a program called lpr that accepts standard input and sends it to the printer. It is often used with pipes and filters. Here are a couple of examples:
+
+cat poorly_formatted_report.txt | fmt | pr | lpr
+
+cat unsorted_list_with_dupes.txt | sort | uniq | pr | lpr
+echo commmand:With expansion, you type something and it is expanded into something else before the shell acts upon it. To demonstrate what we mean by this, let's take a look at the echo command. echo is a shell builtin that performs a very simple task. It prints out its text arguments on standard output:
+echo anycharcter*:represents it will display the starting files that are having this ext
+echo *anycharcter:represents it will display the ending files that are having this ext
+Tilde Expansion:As you may recall from our introduction to the cd command, the tilde character (“~”) has a special meaning. When used at the beginning of a word, it expands into the name of the home directory of the named user, or if no user is named, the home directory of the current user:
+7.This lesson will cover the following commands:
+chmod - modify file access rights
+su - temporarily become the superuser
+sudo - temporarily become the superuser
+chown - change file ownership
+chgrp - change a file's group ownership
+rwx rwx rwx = 111 111 111
+rw- rw- rw- = 110 110 110
+rwx --- --- = 111 000 000
+
+and so on...
+
+rwx = 111 in binary = 7
+rw- = 110 in binary = 6
+r-x = 101 in binary = 5
+r-- = 100 in binary = 4
+
+
+Value
+Meaning
+777
+(rwxrwxrwx) No restrictions on 		permissions. Anybody may do anything. 		Generally not a desirable setting.
+755
+(rwxr-xr-x) The file's owner may 		read, write, and execute the file. All others 		may read and execute the file. This setting 		is common for programs that are used by all 		users.
+700
+(rwx------) The file's owner may 		read, write, and execute the file. Nobody 		else has any rights. This setting is useful 		for programs that only the owner may use and 		must be kept private from others.
+666
+(rw-rw-rw-) All users may read 		and write the file.
+644
+(rw-r--r--) The owner may read 		and write a file, while all others may only 		read the file. A common setting for data 		files that everybody may read, but only the 		owner may change.
+600
+(rw-------) The owner may read 		and write a file. All others have no rights. 		A common setting for data files that the 		owner wants to keep private.
+Directory Permissions
+The chmod command can also be used to control the access permissions for directories. Again, we can use the octal notation to set permissions, but the meaning of the r, w, and x attributes is different:
+r - Allows the contents of the directory to be listed if the x attribute is also set.
+w - Allows files within the directory to be created, deleted, or renamed if the x attribute is also set.
+x - Allows a directory to be entered (i.e. cd dir).
+Here are some useful settings for directories:  
+Job Control:There are several commands that can be used to control processes. They are:
+ps - list the processes running on the system
+kill - send a signal to one or more processes (usually to "kill" a process)
+jobs - an alternate way of listing your own processes
+bg - put a process in the background
+fg - put a process in the forground
+
+Name
+Description
+SIGHUP
+Hang up signal. Programs can listen for 		this signal and act upon it. This signal is sent 		to processes running in a terminal when you close 		the terminal.
+SIGINT
+Interrupt signal. This signal is given 		to processes to interrupt them. 		Programs can process this signal and act upon 		it. You can also issue this signal directly 		by typing Ctrl-c in the terminal window 		where the program is running.
+SIGTERM
+Termination signal. This signal is given 		to processes to terminate them. Again, 		programs can process this signal and act upon 		it. This is the default signal sent by the kill command if no signal is 		specified.
+SIGKILL
+Kill signal. This signal causes the 		immediate termination of the process by the 		Linux kernel. Programs cannot listen for this 		signal.
+8.shell scripts:
+a shell script is a file containing a series of commands. The shell reads this file and carries out the commands as though they have been entered directly on the command line.
+To successfully write a shell script, you have to do three things:
+Write a script
+Give the shell permission to execute it
+Put it somewhere the shell can find it
+scripts---> cat<<- eof refers to the ending and starting should be the same string as user defined. 
+show_uptime--> it will display the updatedtime by user commnd is uptime
+df--->drive space means it will display the space occupied by mounted files.
+home_space-->it will tell about how much space is present in his/her home directory.
+echo$ means if it will return 0 it means success and if it return another number from 1-255 ratherthan 0 return failed.
+The id command can tell us who the current user is. When executed with the "-u" option, it prints the numeric user id of the current user.
+set -x mean  tracing of script is on and set +x mean tracing is off 
+As you can see, we displayed a prompt on line 3. Note that "-n" given to the echo command causes it to keep the cursor on the same line; i.e., it does not output a linefeed at the end of the prompt.
+
+#!/bin/bash
+
+echo -n "Enter some text > "
+read text
+echo "You entered: $text"
+       
+if we want to enter the number manually we need to write n in the prompt
+shell scripts:
+Writing Your First Script and Getting It to Work
+To successfully write a shell script, you have to do three things:
+Write a script
+Give the shell permission to execute it
+Put it somewhere the shell can find it
+steps:
+1.need to save the file with sh extension in nano terminal
+2.give filr permissions
+3.execute the file
+Flow Control - Part 1
+
+if
+test
+exit
+
+Expression
+Description
+-d file
+True if file is a directory.
+-e file
+True if file exists.
+-f file
+True if file exists and is a 		regular file.
+-L file
+True if file is a symbolic 		link.
+-r file
+True if file is a file readable by 		you.
+-w file
+True if file is a file writable by 		you.
+-x file
+True if file is a file executable 		by you.
+file1 -nt file2
+True if file1 is newer than (according to modification time) file2
+file1 -ot file2
+True if file1 is older than file2
+-z string
+True if string is empty.
+-n string
+True if string is not empty.
+string1 = string2
+True if string1 equals string2.
+string1 != string2
+True if string1 does not equal string2.
+
+Flow Control - Part 2
+
+for
+while
+until
+How to change directory permissions in Linux
+To change directory permissions in Linux, use the following:
+chmod +rwx filename to add permissions.
+chmod -rwx directoryname to remove permissions.
+chmod +x filename to allow executable permissions.
+chmod -wx filename to take out write and executable permissions.
+Note that “r” is for read, “w” is for write, and “x” is for execute. 
+This only changes the permissions for the owner of the file.
+How to Change Directory Permissions in Linux for the Group Owners and Others
+The command for changing directory permissions for group owners is similar, but add a “g” for group or “o” for users:
+chmod g+w filename
+chmod g-wx filename
+chmod o+w filename
+chmod o-rwx foldername
+To change directory permissions for everyone, use “u” for users, “g” for group, “o” for others, and “ugo” or “a” (for all).
+chmod ugo+rwx foldername to give read, write, and execute to everyone.
+chmod a=r foldername to give only read permission for everyone.
+Permissions in Linux for the Group Owners and Others
+The command for changing directory permissions for group owners is similar, but add a “g” for group or “o” for users:
+chmod g+w filename
+chmod g-wx filename
+chmod o+w filename
+chmod o-rwx foldername
+here g means group and o means user
+How to Change Ownership in Linux
+Another helpful command is changing ownerships of files and directories in Linux:
+chown name filename
+chown name foldername
+Permission numbers are:
+0 = ---
+1 = --x
+2 = -w-
+3 = -wx
+4 = r-
+5 = r-x
+6 = rw-
+7 = rwx
+
+
