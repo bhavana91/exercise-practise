@@ -1,0 +1,146 @@
+ HTML - -> hyper text markup language.
+DOCTYPE - - >indicates the version of document.
+the HTML element acts as a root for hole document.
+head contains metadata of the page
+in the head tag we can write link tag and also some of the data
+<head> - - >inside we can have
+<meta> - - > add an extra data to the document.
+<tittle> - - > to display the tittle in the browser.
+<link> - - > to link other type of documents like CSS and HTML and java script.
+<script>
+<base>
+<style>
+</head>
+<body> - - > to keep the contents.
+              <text> - - > to keep the text with diff size and color.
+           <list> - - > to datafiy a set of items in ordered or in ordered fashion.
+<link> - - > to give linking from one page to another page.
+<table> - - > to display the content in the table format.
+<image> - - > to display the image in the browser on webpage.
+</body>
+
+id - - > should be unique.
+class - - > can be same also
+h1,h2,h3,h4,h5,h6  - - >headings
+
+text breaking and wide space"
+<pre> - - > formatted text
+<br> - -> addd aa new line
+<hr> - - >to provide a single line after  anything
+&nbsp;  -  -  >no  space
+&lt;&gt; - - > less than and greater-than;
+@copy; - - > to get a copy right symbol.
+reference text :
+<sup> - - >superscript
+<sub>-  -  >subscript
+<cite> - - >Citation element ( <cite> ) is used to describe a reference to a cited creative work, and must include the title of that work.
+<abbr> - - >An abbreviation is marked up
+ <samp> or <code> - - >  developing API or CODE
+<kbd> - - > writing keyboard inputs <var> - - > writing  any variable
+<blockquote> - - >A section that is quoted from another source
+<q></q> : for quettion marks.
+
+TYPES OF LIST :
+ordered  list - - >we do care about ordering the elements in a document  <ol><li></li></ol>
+unordered list - ->list of elements in an unorder like no order fr that <ul> <Li></li></ul>
+definition list - - >  having two pairs of elements one is definition element and one-is definition meaning  of that term.<dl> <dt></dt></dl>
+
+source anchor - - > <a href="target page" ></a>
+named anchor - - > <a name="name"></a>
+implicit anchor - - > <div id="name"></div>
+
+<tr>,<td>,<th>  - - >for table data,table heading,table row.
+colspan,rowspan - - >to combine tow rows.
+styling for text:
+<b> - Bold text
+<strong> - Important text
+<i> - Italic text
+<em> - Emphasized text
+<mark> - Marked text
+<small> - Small text
+<del> - Deleted text
+<ins> - Inserted text
+<sub> - Subscript text
+<sup> - Superscript text
+style types:
+Inline - by using the style attribute in HTML elements
+Internal - by using a <style> element in the <head> section
+External - by using an external CSS file.
+Use the HTML style attribute for inline styling
+Use the HTML <style> element to define internal CSS
+Use the HTML <link> element to refer to an external CSS file
+Use the HTML <head> element to store <style> and <link> elements
+Use the CSS color property for text colors
+Use the CSS font-family property for text fonts
+Use the CSS font-size property for text sizes
+Use the CSS border property for borders
+Use the CSS padding property for space inside the border
+Use the CSS margin property for space outside the border
+Use the <a> element to define a link
+Use the href attribute to define the link address
+Use the target attribute to define where to open the linked document
+Use the <img> element (inside <a>) to use an image as a link
+Use the HTML <img> element to define an image
+Use the HTML src attribute to define the URL of the image
+Use the HTML alt attribute to define an alternate text for an image, if it cannot be displayed
+Use the HTML width and height attributes to define the size of the image
+Use the CSS width and height properties to define the size of the image (alternatively)
+Use the CSS float property to let the image float
+
+Following is a list of all types of <input> element of HTML.
+type=" "
+Description
+text
+Defines a one-line text input field
+password
+Defines a one-line password input field
+submit
+Defines a submit button to submit the form to server
+reset
+Defines a reset button to reset all values in the form.
+radio
+Defines a radio button which allows select one option.
+checkbox
+Defines checkboxes which allow select multiple options form.
+button
+Defines a simple push button, which can be programmed to perform a task on an event.
+file
+Defines to select the file from device storage.
+image
+Defines a graphical submit button.
+select  element 
+      <select name="cars">  
+<option value="volvo">Volvo</option>     
+<option value="saab">Saab</option>  
+<option value="fiat">Fiat</option>   
+<option value="audi">Audi</option>
+</select>
+iframe::
+<iframe src="URL"></iframe>  
+The HTML <script> Tag
+The <script> tag is used to define a client-side script  (JavaScript).
+The <script> element either contains script statements, or it points to an  external script file through the src attribute.
+Common uses for JavaScript are image manipulation, form validation, and  dynamic changes of content.
+To select an HTML element, JavaScript most often uses the  document.getElementById() method.
+  
+
+less::
+mainly used for reusing the css code.
+LESS keeps your code in modular way which is really important by making it readable and easily changeable.
+Faster maintenance can be achieved by the use of LESS variables.
+Features
+Cleaner and more readable code can be written in an organized way.
+We can define styles and it can be reused throughout the code.
+LESS is based on JavaScript and is a super set of CSS.
+LESS is an agile tool that sorts out the problem of code redundancy.
+lessc -v: to check the version of less
+note:Anything written inside ~"some_text" will be displayed as some_text after compiling the LESS code to CSS code.
+variables declaration:
+LESS allows variables to be defined with an @ symbol. The Variable assignment is done with a colon(:).
+in this less variables are declared with :symbol.
+comments:
+but when you compile the LESS code, the single line comments will not appear in the CSS file.
+extend:
+Extend is a LESS pseudo class which extends other selector styles in one selector by using :extend selector.:wq
+:wq
+
