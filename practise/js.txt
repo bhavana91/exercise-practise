@@ -1,0 +1,287 @@
+[200~JavaScript was initially created to “make web pages alive”.
+this makes the java script as unique.
+Full integration with HTML/CSS.
+Simple things are done simply.
+Support by all major browsers and enabled by default.
+A variable is a “named storage” for data. We can use variables to store goodies, visitors, and other data.
+To create a variable in JavaScript, use the let keyword.
+We can declare variables to store data by using the var, let, or const keywords.
+let – is a modern variable declaration.
+var – is an old-school variable declaration. Normally we don’t use it at all, but we’ll cover subtle differences from let in the chapter The old "var", just in case you need them.
+const – is like let, but the value of the variable can’t be changed.
+data types:
+1.Infinity represents the mathematical Infinity ∞. It is a special value that’s greater than any number.
+We can get it as a result of division by zero:
+2.NaN represents a computational error. It is a result of an incorrect or an undefined mathematical operation, for instance.
+3. if there’s a NaN somewhere in a mathematical expression, it propagates to the whole result.
+4.BigInt type was recently added to the language to represent integers of arbitrary length.
+A BigInt is created by appending n to the end of an integer literal:
+strings:
+In JavaScript, there are 3 types of quotes.
+Double quotes: "Hello".
+Single quotes: 'Hello'.
+Backticks: `Hello`.
+boolean::
+The boolean type has only two values: true and false.
+This type is commonly used to store yes/no values: true means “yes, correct”, and false means “no, incorrect”.
+
+The “null” value:
+The special null value does not belong to any of the types described above.
+It forms a separate type of its own which contains only the null value:
+JavaScript that type of null is an object.
+
+The typeof operator
+The typeof  operator returns the type of the argument. It’s useful when we want to  process values of different types differently or just want to do a quick  check.
+It supports two forms of syntax:
+As an operator: typeof x.
+As a function: typeof(x).
+There are 8 basic data types in JavaScript.
+number for numbers of any kind: integer or floating-point, integers are limited by ±253.
+bigint is for integer numbers of arbitrary length.
+string for strings. A string may have one or more characters, there’s no separate single-character type.
+boolean for true/false.
+null for unknown values – a standalone type that has a single value null.
+undefined for unassigned values – a standalone type that has a single value undefined.
+object for more complex data structures.
+symbol for unique identifiers.
+The typeof operator allows us to see which type is stored in a variable.
+Two forms: typeof x or typeof(x).
+Returns a string with the name of the type, like "string".
+For null returns "object" – this is an error in the language, it’s not actually an object.
+TYPE CONVERSIONS:
+Numeric conversion rules:
+Value
+Becomes…
+undefined
+NaN
+null
+0
+true and false
+1 and 0
+string
+Whitespaces from the start and end are removed. If the remaining string is empty, the result is 0. Otherwise, the number is “read” from the string. An error gives NaN.
+
+String Conversion – Occurs when we output something. Can be performed with String(value). The conversion to string is usually obvious for primitive values.
+Numeric Conversion – Occurs in math operations. Can be performed with Number(value).
+undefined is Nan as a number, not 0.
+"0" and space-only strings like " " are true as a Boolean.
+An operand – is what operators are applied to. For instance, in the multiplication of 5 * 2 there are two operands: the left operand is 5 and the right operand is 2. Sometimes, people call these “arguments” instead of “operands”.
+An operator is unary if it has a single operand. For example, the unary negation - reverses the sign of a number:
+
+
+Bitwise operators
+Bit wise operators treat arguments as 32-bit integer numbers and work on the level of their binary representation.
+These operators are not JavaScript-specific. They are supported in most programming languages.
+The list of operators:
+AND ( & )
+OR ( | )
+XOR ( ^ )
+NOT ( ~ )
+LEFT SHIFT ( << )
+RIGHT SHIFT ( >> )
+ZERO-FILL RIGHT SHIFT ( >>> )
+
+alert,prompt,confirm messages:
+alert :shows a message.
+alert syntax  - > alert(message);
+prompt: shows a message asking the user to input text. It returns the text or, if Cancel button or Esc is clicked, null.
+prompt syntax - > result = prompt(title, [default]);
+where title which will show to the user.
+where default is defined as 
+An optional second parameter, the initial value for the input field.
+confirm:shows a message and waits for the user to press “OK” or “Cancel”. It returns true for OK and false for Cancel/Esc.
+confirm syntax - > result=confirm(question).
+logical operators: they are three types of logical operators they are 
+or ,and, not
+or:
+if both the conditions are false then only the condition or operator WILL BE false.
+and:
+if both the values are true  then only it will go for true otherwise it will go for false.
+not:
+if the value is true it will return as  false and if the value as false the it will return as  true.
+loops: for running the condition for multiple times based on the condition 
+while , do while ,  for
+while - >The condition is checked before each iteration.. first it will check the condition then it ill go for execution
+while(condition){
+//code to be executed.
+}
+do while -  >The condition is checked after each iteration.. after execution it will check the condition.
+do{
+//code to be executed
+}
+while(condition)
+for - >
+for (begin; condition; step) {
+//code to be executed
+}
+break - >we can also use break stmt to stop the execution of loop at particular condition.
+continue - >we can use continue statement it will skip the condition where we have written the continue statement .it stops the current iteration and forces the loop to start a new one (if the condition allows).
+
+
+functions - >
+ Quite often we need to perform a similar action in many places of the script.
+function name(parameters) {
+  ...body...
+}
+function declaration and function expression:
+Function Declaration: a function, declared as a separate statement, in the main code flow.
+// Function Declaration
+function sum(a, b) {
+  return a + b;
+}
+Function Expression: a function, created inside an  expression or inside another syntax construct. Here, the function is  created at the right side of the “assignment expression” =:
+// Function Expression
+let sum = function(a, b) {
+  return a + b;
+};
+
+Arrow functions:
+syntax:
+let func = (arg1, arg2, ...argN) => expression
+Objects:
+They store properties (key-value pairs), where:
+Property keys must be strings or symbols (usually strings).
+Values can be of any type.
+
+1.objects are used to store keyed collections of various data and more complex entities.
+2.An object can be created with figure brackets {…} with an optional list of properties. A property is a “key: value” pair, where key is a string (also called a “property name”), and value can be anything.
+let user = new Object(); // "object constructor" syntax
+let user = {};  // "object literal" syntax
+ note::
+let user = {
+  name: "John",
+  age: 30,
+  "likes birds": true  // multiword property name must be quoted
+};
+ to access any property we will go for . notation.
+To delete a property: delete obj.prop.
+To check if a property with the given key exists: "key" in obj.
+To iterate over an object: for (let key in obj) loop.
+The “for…in” loop
+To walk over all keys of an object, there exists a special form of the loop: for..in. This is a completely different thing from the for(;;) construct that we studied before.
+The syntax:
+for (key in object) {
+  // executes the body for each key among object properties
+}
+ ex:
+ let user={
+name:sai,
+age:30
+};
+for( let key in user){
+alert(key);
+ alert( user[key] ); // John, 30, true
+}
+
+we can use object assign instead of cloning
+Also we can use the method Object.assign or _.cloneDeep(obj).for that.
+The syntax is:
+Object.assign(dest, [src1, src2, src3...])
+let user = {
+  name: "John",
+  age: 30
+};
+
+let clone = Object.assign({}, user);
+ to check weather the object is empty or not is isEmpty(obj).
+this - >
+To access the object, a method can use the this keyword.
+
+date and time:
+An integer number representing the number of milliseconds that has passed since the beginning of 1970 is called a timestamp.
+It’s a lightweight numeric representation of a date. We can always create a date from a timestamp using new Date(timestamp) and convert the existing Date object to a timestamp using the date.getTime() method (see below).
+
+There are methods to access the year, month and so on from the Date object:
+getFullYear()
+Get the year (4 digits)
+getMonth()
+Get the month, from 0 to 11.
+getDate()
+Get the day of month, from 1 to 31, the name of the method does look a little bit strange.
+getHours(), getMinutes(), getSeconds(), getMilliseconds()
+Get the corresponding time components.
+
+
+classes:
+
+The instanceof operator allows to check whether an object belongs to a certain class. It also takes inheritance into account.
+stntax:
+
+ARRAYS:
+
+ indexof(value):
+finds the position of element if found it will give position otherwise it will give -1 if not found.
+includes(value):
+if the value present in the array it will give the true value otherwise gives false value if not found
+lastindexof(value,starts from index(right to left)):
+arr.slice:
+The slice() method returns the selected elements in an array, as a new array object.
+The slice() method selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
+Note: The original array will not be changed.
+let arr=[1,2,3,6,7,4,5];
+console.log(arr.slice(1,4));op//2,3,6
+arr.splice(position to be inserted,start from index,value to be inserted):
+this will form an diff array by copying all the data from the array on which we are doing splice function and gives the new array as output.
+let arr=[1,2,4,5];
+console.log(arr.splice(2,0,3));op//1,2,3,4,5.
+arr.map(item=>item.functoin need to perform like.length or *2):
+it will give the result like which function we have performed over the array.
+let arr=["hi","hlo"];
+console.log(arr.map(a=>a.length));
+arr.find():
+The find() method returns the value of the first element in the provided array that satisfies the provided testing function.
+
+const arr=[1,2,3,4];
+arr.find(index=index>1);
+condole.log(arr);o/p///2,3,4
+foreach():
+it will return the each and evry element in th e arrayby using the loop format.
+const arr=['a','b',
+arr.filter():
+var newArray = arr.filter(callback(element[, index[, array]])[, thisArg])
+it will gives the output based on the condition on which the user has mentioned. will check hole array.
+arr.some(item=>item(condition)):
+1.The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
+2.means we need to pass a condition that should stratify at-least one element in the array if satisfied then return true otherwise false.
+const array = [1, 2, 3, 4, 5];
+// checks whether an element is even
+const even = (element) => element % 2 === 0;
+console.log(array.some(even));//op is true.
+arr.every(item=>item(condition)):
+1.The every() method tests whether all the elements in the array passes the test implemented by the provided function. It returns a Boolean value.
+2.means we need to pass a condition that should stratify all elements in the array if satisfied then return true otherwise false.
+const array = [1, 2, 3, 4, 5];
+// checks whether an element is even
+const even = (element) => element % 2 === 0;
+console.log(array.every(even));//op is true.
+join():
+The join() method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
+const elements = ['Fire', 'Air', 'Water'];
+console.log(elements.join());
+// expected output: "Fire,Air,Water"
+console.log(elements.join(''));
+// expected output: "FireAirWater"
+console.log(elements.join('-'));
+// expected output: "Fire-Air-Water"
+reduce():
+The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+const arr=[1,3,4,5,7];
+const result = arr.reduce((word,item) => word+item);
+console.log(result);
+strings:
+str.indexof(indexposition):
+gives the position of index of starting index string.
+str.search(string):
+it will check weather the given string is present 
+str.charat(position):
+it will give u the element which is present in the given position.
+str.replace(nameof the string that need to be replace ,string that need to be replace);
+IT IS going to replace first occurence of that string with the string to be replaced. 
+str.match(values):
+it will give the all the matched possibilites as a output.
+var paragraph = 'The quick brown fox jumps over the lazy dog. It barked.';
+var regex = /[a-z]/g;
+var found = paragraph.match(regex);
+
+console.log(found);
+// expected output:> Array ["h", "e", "q", "u", "i", "c", "k", "b", "r", "o", "w", "n", "f", "o", "x", "j", "u", "m", "p", "s", "o", "v", "e", "r", "t", "h", "e", "l", "a", "z", "y", "d", "o", "g", "t", "b", "a", "r", "k", "e", "d"]
