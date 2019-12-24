@@ -1,0 +1,144 @@
+[200~
+ES - - > ECMA script basically a scripting language.
+
+
+
+
+
+
+Difference Between ES6 vs ES5
+ES6 vs ES5 are two of the important scripting languages in the Software Development industry.  Both ES5 vs ES6 have some similarities in nature but at the same point  in time, there are also many difference between ES6 and ES5. Here, we  will be going to have a detailed discussion on ES6 vs ES5.
+The full form of ES is ECMA Script which is basically a trademarked  scripting language defined by ECMA International. This is mainly used  for client-side scripting on the World Wide Web. The first edition of  the ECMA Script was published in June 1997.
+
+
+
+The sixth version of ECMA Script is known as ES6 (it is also called as ECMA Script 2015). The ES6 includes the following important features:
+ES6 Features:
+Arrows: These are a function which is described by the ‘=>’ syntax
+Objects: Object literals are used to support the prototype assignments.
+Classes: ES6 classes can be easily implemented over the prototype based object oriented pattern
+Destructing: It allows binding pattern which is based primarily on the pattern matching.
+String interpolation
+Default
+Spread
+Module Loaders
+Weak set
+Map
+New Library
+Promises
+Proxies
+The fifth edition of the ECMA Script is known as ES5 and ECMA Script 2009. The ES5 includes the following important features:
+NOTE:When we need to iterate over an array – we can use forEach, for or for..of.
+When we need to iterate and return the data for each element – we can use map.
+ES5 Features:
+1.Strict Mode: It basically helps javascript languages to perform more efficiently by applying more checks and cleaning a few existing features
+ 2.Accessors: It allows users to implement the getting and setting of properties by using methods.
+ 3.Syntactical changes:
+Trailing Commas
+Multiline string literals
+Property keys using reserved words
+4. Additional features: There are few additional new features have been introduced in case ES5.
+
+1. ‘use strict’ Directive: 
+The earlier versions of JS allow the usage  of undeclared variables. But when the es5 ‘use strict’ feature is used,  an error is reported.
+2. New Methods in an Array
+isArray(): This method checks if the object is an array or not and returns the result in true or false.
+forEach(): It executes the function for every element found in the array.
+map(): The map() method creates a new array by mapping every element of the array (on which the map is used).
+filter(): It creates a new array that contains elements which got filtered by making array elements pass some condition.
+reduce(): It applies a function to each element in an array and reduces the array to a single element.
+reduceRight(): It is quite same to reduce method, except for the traversal that happens from right to left.
+every(): This method checks a condition with every element of an array and if every element satisfies then returns true if at least one element doesn’t satisfy the condition then returns false.
+some(): It is same as every() method wherein some() checks for at least one element that gets satisfied with the condition and if found returns true and if none satisfies then false.
+indexof():gives the index of elementin an array or string or anything.
+lastIndexOf(): Same as indexOf but checks and returns from the other end of an array.
+3. JSON Support
+parse(): It parses a JSON string like an object.
+
+stringify(): This method converts an object to a JSON string.
+valueOf(): It returns the primitive value of a date object.
+ Getters and Setters:
+getter will get a value and setter will set a value to a variable.
+get – a function without arguments, that works when a property is read,
+set – a function with one argument, that is called when the property is set,
+enumerable – same as for data properties,
+configurable – same as for data properties.
+
+ES6:
+JS has shown great progress in the recent years starting from 2015 by  releasing ES6 version. With this release, Javascript has made a big  achievement in making a developers life easy and reached the  expectations of a modern programming language. Even after 4 years of the  release, many newbies to JS are not so familiar with all the versions.
+Below is a list of the features that have come with ES6 version:
+Let & Const:
+Till ES5, JS has only function scope and global scope with the introduction of let keyword in ES6, JS can now have block scope.
+for..of:
+for...of is an alternative for both for...in and forEach() and loops iterable data structures like Arrays, Maps, Sets, and strings.
+for (variable of iterable) {
+  statement
+}
+
+default parameters:
+Ex: 
+
+
+Arrow Function
+Here’s a function expression in ES5:
+const add = function(num) { 
+   return num + num; 
+}
+With arrow functions, we get rid of the function keyword and put a fat arrow (=>) between the parameters and the body of the function:
+const add = (num) => { 
+   return num + num; 
+}
+If our function is a one-liner and returns a value, we can drop the return keyword as well as the curly braces:
+const add = (num) => num + num;
+If our arrow function includes only a single parameter, we can even drop the parenthesis:
+const add = num => num + num;
+If our arrow function doesn’t have any parameters, then
+const helloWorld = () => { console.log('Hello World'); };
+
+Rest Operator:
+Rest Operator is used to handle function parameters. It uses three dots as its syntax (i.e …).
+Spread Operator:
+Spread Operator is used with arrays and  its syntax is exactly the same as that of Rest Operator (ie …). It is  used to split the contents of an array.
+Ex: 
+
+Template Literals/Strings:
+It allows embedded expressions, which makes print statements easy.
+Ex:
+
+Promises:
+Promises are introduced in ES6 to handle  Asynchronous Programming in a more elegant way. Before Promises, async  calls were handled by Callbacks. Promises resolved the Call Back Hell.
+Classes:
+The Objects in Javascript are based on Prototypes and follows Prototypal Inheritance. But in ES6 the keyword class is introduced that makes the approach very easy.
+Ex:
+
+map: is a collection of keyed data items like object.but allows all the types of keys.
+new.map:creates new map
+map.set:it sets the map
+map.delete:deletes the map
+get map : The constructor function that is used to create derived objects.
+Map.length
+The value of the length property is 0.  To count how many elements are in a Map, use Map.prototype.size.
+map.clear():which is gng to clear the keys and values frm key value pair.
+map.get:Returns the value associated to the key, or undefined if there is none.
+and some more are there.
+
+set: is a collection of values occur only once.it is having the methods like.
+same as like map it is also having the methods like instead of map keep set.
+iteration over map:::
+map.vales(),map.keys(),map.entries()
+iteration over set:::
+set.vales(),set.keys(),set.entries()
+iteration over object:::
+object.vales(),object.keys(),object.entries()
+
+Diff bw weak map and map::
+the only diff is weak mapkeys must be primitive values.
+
+ES7:
+1.relesed in 2016.
+some of the features are like:::
+exponential operator:
+which is used for finding the power values
+console.log(3**2):://output:9//
+2.includes():::
+which is going to check weather the element is present in array or not.
