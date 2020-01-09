@@ -1,0 +1,18 @@
+<html>
+    <script>
+     let n=window.prompt();
+     function main(n){
+         for(let i=0;i<=n;i++){
+             for(let j=0;j<=n-1;j++){
+                 if(i==j || i+j==n-1){
+                     document.write("*");
+                 }else{
+                     document.write("&nbsp ");
+                 }
+             }
+             document.write("<br>");
+         }
+     }
+     main(n);
+    </script>
+</html>
