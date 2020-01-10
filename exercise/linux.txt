@@ -14,7 +14,7 @@ step3:./filename.sh
 
 2. Delete file which has special characters. “ -“, “—“, “*”, “$”.
 sol:
-find . -type f -name "[@%]*" -delete
+find . -type f -name "*[@%]*" -delete
 
 3. Write a shell script that take two input numbers from user at runtime and display arithmetic
 operation on that numbers, find out max, & min number from them, find weather that numbers
